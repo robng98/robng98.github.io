@@ -16,7 +16,7 @@
 
 <body>
 
-    <h1>Faça o Upload de seu arquivo 3</h1>
+    <h1>Faça o Upload de seu arquivo</h1>
 
     <form id = "myForm">
         <input type = "file" id = "inpFile"> <br/>
@@ -37,7 +37,7 @@
             formData.append("inpFile", inpFile.files[0]);
 
             fetch(endpoint, {
-                method: "post",
+                method: "POST",
                 body: formData
             }).catch(console.error);
         });
