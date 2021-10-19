@@ -1,0 +1,48 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentativas de Upar</title>
+
+    <link rel="stylesheet" href="/assets/dcode.css">
+    <link rel="shortcut icon" href="/assets/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head> -->
+
+
+<body>
+
+    <h1>Faça o Upload de seu arquivo 3</h1>
+
+    <form id = "myForm">
+        <input type = "file" id = "inpFile"> <br/>
+        <button type = "submit">Upload do Arquivo</button>
+    </form>
+
+
+    <script>
+        const myForm = document.getElementById("myForm");
+        const inpFile = document.getElementById("inpFile");
+
+        myForm.addEventListener("submit", e => {
+            e.preventDefault();
+
+            const endpoint = "upload.php";
+            const formData = new FormData();
+
+            formData.append("inpFile", inpFile.files[0]);
+
+            fetch(endpoint, {
+                method: "post",
+                body: formData
+            }).catch(console.error);
+        });
+    </script>
+
+</body>
+
+</html>
