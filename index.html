@@ -1,4 +1,18 @@
- <h1>Faça o Upload de seu arquivo 9</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentativas de Upar</title>
+
+
+</head>
+
+
+<body>
+
+    <h1>Faça o Upload de seu arquivo 5</h1>
 
     
     <input type = "file" id = "inpFile" multiple> 
@@ -15,13 +29,17 @@
                     const formData = new FormData();
                     
                     for (const file of inpFile.files){
-                        formData.append("myFiles[]", file);
+                        formData.append("myFiles", file);
                     }
 
-                    fetch("upload.php", {
+                    fetch("http://localhost:3000/upload", {
                         method: "post",
                         body: formData
                     }).catch(console.error);
                 });
                
     </script>
+
+</body>
+
+</html>
