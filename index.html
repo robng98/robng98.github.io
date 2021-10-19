@@ -12,7 +12,7 @@
 
 <body>
 
-    <h1>Faça o Upload de seu arquivo 5</h1>
+    <h1>Faça o Upload de seu arquivo 7</h1>
 
     
     <input type = "file" id = "inpFile" multiple> 
@@ -29,10 +29,10 @@
                     const formData = new FormData();
                     
                     for (const file of inpFile.files){
-                        formData.append("myFiles", file);
+                        formData.append("myFiles[]", file);
                     }
 
-                    fetch("http://localhost:3000/upload", {
+                    fetch("upload.php", {
                         method: "post",
                         body: formData
                     }).catch(console.error);
